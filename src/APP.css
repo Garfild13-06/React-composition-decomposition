@@ -1,4 +1,4 @@
-/* Сброс стилей и общие настройки */
+/* Сброс стилей */
 * {
   margin: 0;
   padding: 0;
@@ -8,121 +8,57 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f5f5f5;
-  margin: 0;
-  padding: 0;
+  color: #333;
+  line-height: 1.6;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+/* Обертка страницы */
+.page-wrapper {
+  max-width: 1920px; /* Максимальная ширина экрана */
+  margin: 0 auto; /* Центрирование по горизонтали */
+  padding: 0 20px; /* Отступы по бокам */
+  width: 100%; /* Занимает всю доступную ширину */
 }
 
-/* --- Header (Шапка) --- */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-  background-color: white;
-  width: 100%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.header nav a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: blue;
-}
-
-/* --- Основное содержимое (Растягивается) --- */
+/* Основное содержимое */
 .content-wrapper {
   display: flex;
-  flex-grow: 1;
-  width: 100%;
-  max-width: 1200px;
-  margin: 20px auto;
-  gap: 20px;
+  gap: 20px; /* Расстояние между блоками */
+  margin-top: 20px;
 }
 
-/* --- Главный контент (Новости + Баннер) --- */
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column; /* Вертикальное расположение на маленьких экранах */
+  }
+}
+
+/* Главный контент */
 .main-content {
   flex-grow: 2; /* Занимает больше места */
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
 }
 
-/* --- Боковая колонка --- */
+/* Боковая колонка */
 .sidebar {
   flex-grow: 1; /* Занимает меньше места */
-  background: #f0f0f0;
+  background: #f9f9f9;
   padding: 15px;
-  border-radius: 5px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
 }
 
-/* --- Секция новостей --- */
-.news-section {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background: white;
-  padding: 15px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.news-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-/* --- Баннер (Растягивается) --- */
-.banner {
-  width: 100%;
-  text-align: center;
-  padding: 10px;
-  background: white;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* --- Footer (Растягивается) --- */
+/* Подвал */
 .footer {
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  max-width: 1200px;
-  margin: 20px auto;
   gap: 20px;
-  padding: 15px;
-  background: white;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+  background: #fff;
+  border-top: 1px solid #ddd;
 }
 
-/* --- Виджеты (Боковая колонка) --- */
-.weather, .trending, .map, .tv-schedule, .live-stream {
-  padding: 10px;
-  margin-top: 10px;
-  background: white;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* --- Адаптивность (Мобильные устройства) --- */
 @media (max-width: 768px) {
-  .content-wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .main-content, .sidebar, .footer {
-    width: 100%;
-  }
-
   .footer {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* Вертикальное расположение на маленьких экранах */
   }
 }
